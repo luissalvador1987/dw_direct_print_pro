@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_direct_print_job_list" model="ir.ui.view">
+        <field name="name">direct.print.job.list</field>
+        <field name="model">direct.print.job</field>
+        <field name="arch" type="xml">
+            <list decoration-danger="state == 'error'" decoration-success="state == 'printed'"
+                  decoration-muted="state in ('draft', 'sent')" create="false">
+                <field name="create_date" string="Fecha"/>
+                <field name="printer_id"/>
+                <field name="report_id"/>
+                <field name="content_filename"/>
+                <field name="user_id"/>
+                <field name="state" widget="badge"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_direct_print_job_form" model="ir.ui.view">
+        <field name="name">direct.print.job.form</field>
+        <field name="model">direct.print.job</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="printer_id"/>
+                            <field name="report_id"/>
+                            <field name="content_filename"/>
+                            <field name="content_type"/>
+                        </group>
+                        <group>
+                            <field name="state" widget="badge"/>
+                            <field name="user_id"/>
+                            <field name="sent_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="error_message" invisible="state != 'error'"/>
+                    </group>
+                    <button name="action_view_source_record" type="object" string="Ver documento original"
+                            invisible="not res_model"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_direct_print_job" model="ir.actions.act_window">
+        <field name="name">Trabajos de impresión</field>
+        <field name="res_model">direct.print.job</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

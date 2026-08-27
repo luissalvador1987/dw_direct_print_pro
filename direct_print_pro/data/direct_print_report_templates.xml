@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_test_page">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="printer">
+                <div class="page">
+                    <h2>Página de prueba — Direct Print Pro</h2>
+                    <p>Impresora: <b t-esc="printer.name"/></p>
+                    <p>Si puedes leer esto en papel, la conexión funciona correctamente.</p>
+                </div>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_test_page" model="ir.actions.report">
+        <field name="name">Página de prueba (Direct Print Pro)</field>
+        <field name="model">direct.print.printer</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">direct_print_pro.report_test_page</field>
+        <field name="report_file">direct_print_pro.report_test_page</field>
+    </record>
+</odoo>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_direct_print_printer_list" model="ir.ui.view">
+        <field name="name">direct.print.printer.list</field>
+        <field name="model">direct.print.printer</field>
+        <field name="arch" type="xml">
+            <list decoration-muted="not active">
+                <field name="name"/>
+                <field name="connection_type"/>
+                <field name="host"/>
+                <field name="os_printer_name"/>
+                <field name="agent_id"/>
+                <field name="is_label_printer" widget="boolean_toggle"/>
+                <field name="job_count"/>
+                <field name="active" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_direct_print_printer_form" model="ir.ui.view">
+        <field name="name">direct.print.printer.form</field>
+        <field name="model">direct.print.printer</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_test_print" type="object" string="Imprimir página de prueba"
+                            class="btn-primary"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_jobs" type="object" class="oe_stat_button" icon="fa-print">
+                            <field name="job_count" widget="statinfo" string="Trabajos"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Nombre de la impresora"/>
+                        <h1><field name="name" placeholder="ej: Etiquetas Despacho"/></h1>
+                    </div>
+                    <group>
+                        <group string="Conexión">
+                            <field name="connection_type" widget="radio"/>
+                            <field name="host" invisible="connection_type != 'network'"
+                                   required="connection_type == 'network'" placeholder="192.168.1.50"/>
+                            <field name="port" invisible="connection_type != 'network'"/>
+                            <field name="os_printer_name" invisible="connection_type != 'server_local'"
+                                   required="connection_type == 'server_local'"/>
+                            <field name="agent_id" invisible="connection_type != 'agent'"
+                                   required="connection_type == 'agent'"/>
+                            <field name="agent_printer_name" invisible="connection_type != 'agent'"
+                                   required="connection_type == 'agent'"/>
+                        </group>
+                        <group string="Comportamiento">
+                            <field name="is_label_printer"/>
+                            <field name="is_default_invoice_printer"/>
+                            <field name="default_for_picking_type_ids" widget="many2many_tags"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="is_label_printer or connection_type == 'network'">
+                        Para imprimir PDF (facturas, reportes normales) en esta impresora hace falta
+                        <b>SumatraPDF</b> instalado en la computadora correspondiente (gratis,
+                        sumatrapdfreader.org). Las impresoras de etiquetas/recibos no lo necesitan.
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_direct_print_printer" model="ir.actions.act_window">
+        <field name="name">Impresoras</field>
+        <field name="res_model">direct.print.printer</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Registra tu primera impresora</p>
+            <p>De red/Wi-Fi, conectada a este servidor, o conectada a otra estación vía agente.</p>
+        </field>
+    </record>
+</odoo>

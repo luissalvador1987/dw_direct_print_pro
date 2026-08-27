@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_direct_print_agent_list" model="ir.ui.view">
+        <field name="name">direct.print.agent.list</field>
+        <field name="model">direct.print.agent</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="state" widget="badge" decoration-success="state == 'online'"
+                       decoration-muted="state == 'offline'"/>
+                <field name="last_seen"/>
+                <field name="printer_count"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_direct_print_agent_form" model="ir.ui.view">
+        <field name="name">direct.print.agent.form</field>
+        <field name="model">direct.print.agent</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_regenerate_token" type="object" string="Regenerar token"
+                            confirm="Cualquier agente usando el token anterior dejará de funcionar. ¿Continuar?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="online,offline"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_printers" type="object" class="oe_stat_button" icon="fa-print">
+                            <field name="printer_count" widget="statinfo" string="Impresoras"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" string="Nombre de la estación"/>
+                        <h1><field name="name" placeholder="ej: PC Recepción"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="token" readonly="1"/>
+                            <field name="last_seen" readonly="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Cómo instalar el agente">
+                            <field name="setup_instructions" readonly="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_direct_print_agent" model="ir.actions.act_window">
+        <field name="name">Agentes / Estaciones</field>
+        <field name="res_model">direct.print.agent</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Registra tu primera estación</p>
+            <p>Una computadora o tablet con su propia impresora local/Bluetooth, en otra parte de la red.</p>
+        </field>
+    </record>
+</odoo>

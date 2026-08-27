@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_direct_print_printer_user,direct.print.printer.user,model_direct_print_printer,base.group_user,1,0,0,0
+access_direct_print_printer_manager,direct.print.printer.manager,model_direct_print_printer,group_direct_print_manager,1,1,1,1
+access_direct_print_agent_manager,direct.print.agent.manager,model_direct_print_agent,group_direct_print_manager,1,1,1,1
+access_direct_print_job_user,direct.print.job.user,model_direct_print_job,base.group_user,1,0,0,0
+access_direct_print_job_manager,direct.print.job.manager,model_direct_print_job,group_direct_print_manager,1,1,1,1
+access_direct_print_wizard_user,direct.print.wizard.user,model_direct_print_wizard,base.group_user,1,1,1,1

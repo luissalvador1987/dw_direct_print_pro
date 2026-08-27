@@ -1,0 +1,116 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="text-align:center;">
+        <img src="banner.png" style="max-width:100%; border-radius: 8px;" alt="Direct Print Pro"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <h2 class="oe_slogan">Direct Print Pro</h2>
+    <h3 class="oe_slogan" style="font-weight:normal; color:#6e6e6e;">
+        Imprime cualquier documento de Odoo (reportes, facturas, etiquetas de envío) directo a
+        impresoras de red, Wi-Fi o Bluetooth, sin descargar el PDF primero.
+    </h3>
+    <div class="oe_span12">
+        <p class="oe_mt32" style="font-size:15px; line-height:1.6;">
+            Imprime cualquier reporte de Odoo directamente en una impresora, sin pasar por
+            "descargar el PDF y abrirlo a mano". Funciona en tres niveles, según dónde esté la
+            impresora.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <img src="feature_1.png" style="max-width:100%; border-radius: 8px;"
+             alt="Tres niveles de impresión directa"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <img src="feature_2.png" style="max-width:100%; border-radius: 8px;"
+             alt="Accesos directos de un clic"/>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <img src="feature_3.png" style="max-width:100%; border-radius: 8px;"
+             alt="Honesto sobre sus límites"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <h3 class="oe_slogan" style="text-align:left;">Los tres niveles, en detalle</h3>
+    <div class="oe_span12">
+        <ol style="font-size:14px; line-height:1.8;">
+            <li><b>Impresoras de red / Wi-Fi</b> — se les manda el trabajo directo por IP (protocolo
+                RAW/JetDirect, puerto 9100), desde el propio servidor de Odoo. Cero configuración en
+                cada equipo: cualquiera que use Odoo puede imprimir ahí.</li>
+            <li><b>Impresoras conectadas a este servidor</b> (USB o Bluetooth ya emparejada con esta
+                PC) — se imprimen usando la cola de impresión de Windows, igual de directo.</li>
+            <li><b>Impresoras conectadas a OTRA computadora/tablet de la red</b> (recepción, almacén,
+                otra oficina) — un pequeño agente local (un script liviano, no un instalador pesado)
+                corre en esa PC, recibe los trabajos de Odoo y los manda a la impresora que esa PC
+                tiene instalada (incluyendo Bluetooth emparejada ahí).</li>
+        </ol>
+        <p style="font-size:14px; line-height:1.6;">
+            Además, para cualquier caso no cubierto (o como respaldo si una impresora está
+            desconectada), siempre queda disponible la opción de vista previa + diálogo de impresión
+            del navegador — tampoco descarga ningún archivo.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <h3 class="oe_slogan" style="text-align:left;">Accesos directos de un clic</h3>
+    <div class="oe_span12">
+        <ul style="font-size:14px; line-height:1.8;">
+            <li><b>Facturas</b> — botón "Imprimir factura directo" en la factura.</li>
+            <li><b>Etiquetas de envío</b> — botón "Imprimir etiqueta directo" en la entrega, con
+                impresora por defecto configurable por tipo de operación (ideal para impresoras
+                térmicas de etiquetas dedicadas en el área de despacho).</li>
+            <li><b>Cualquier otro reporte</b> — un asistente genérico (modelo + reporte + impresora)
+                disponible desde cualquier registro o desde el menú de la app.</li>
+        </ul>
+        <p style="font-size:14px; line-height:1.6;">
+            Cada trabajo de impresión queda registrado (impresora, momento, éxito o error) para poder
+            revisar qué se imprimió y detectar impresoras con problemas.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <h3 class="oe_slogan" style="text-align:left;">Honestidad técnica sobre Bluetooth/USB en otra PC</h3>
+    <div class="oe_span12">
+        <p style="font-size:14px; line-height:1.7;">
+            La "impresión directa" a una impresora Bluetooth o USB solo es posible desde la
+            computadora a la que esa impresora está físicamente conectada o emparejada — ninguna
+            aplicación web, de Odoo o de cualquier otro proveedor, puede saltarse esa limitación del
+            sistema operativo y el navegador. Por eso el nivel 3 (agente local) existe: es la forma
+            honesta de lograr impresión directa en la impresora de OTRA computadora.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <h3 class="oe_slogan" style="text-align:left;">Requisitos</h3>
+    <div class="oe_span12">
+        <ul style="font-size:14px; line-height:1.8;">
+            <li>Odoo 18.0 (Community o Enterprise).</li>
+            <li>Aplicaciones estándar de Odoo: Contabilidad, Inventario y Ventas (para los accesos
+                directos de factura y etiqueta de envío).</li>
+            <li>Para el agente local (nivel 3): Python 3 en la estación con la impresora, y en
+                Windows el paquete <code>pywin32</code>; en Linux/Mac usa el comando <code>lp</code>
+                de CUPS (ya viene instalado en casi cualquier distro).</li>
+        </ul>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="text-align:center;">
+        <p style="font-size:13px; color:#6e6e6e;">
+            Soporte: luissalvador1987@gmail.com
+        </p>
+    </div>
+</section>

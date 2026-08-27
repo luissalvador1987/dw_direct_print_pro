@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_direct_print_pro_root" name="Direct Print Pro"
+              web_icon="direct_print_pro,static/description/icon.png" sequence="17"/>
+
+    <menuitem id="menu_direct_print_printers" name="Impresoras" parent="menu_direct_print_pro_root"
+              action="action_direct_print_printer" sequence="10"/>
+    <menuitem id="menu_direct_print_agents" name="Agentes / Estaciones" parent="menu_direct_print_pro_root"
+              action="action_direct_print_agent" sequence="20"
+              groups="direct_print_pro.group_direct_print_manager"/>
+    <menuitem id="menu_direct_print_jobs" name="Trabajos de impresión" parent="menu_direct_print_pro_root"
+              action="action_direct_print_job" sequence="30"/>
+</odoo>
