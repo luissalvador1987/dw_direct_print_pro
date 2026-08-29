@@ -52,7 +52,7 @@ de lograr impresión directa en la impresora de OTRA computadora.
     'category': 'Productivity',
     'author': "Designweblp",
     'maintainer': "Designweblp",
-    'website': "https://github.com/luissalvador1987/direct_print_pro",
+    'website': "https://github.com/luissalvador1987/dw_direct_print_pro",
     'support': "luissalvador1987@gmail.com",
     'license': 'OPL-1',
     'price': 100.0,
@@ -60,7 +60,7 @@ de lograr impresión directa en la impresora de OTRA computadora.
     'images': ['static/description/banner.png'],
     'depends': ['base', 'web', 'mail', 'account', 'stock', 'sale'],
     'data': [
-        'security/direct_print_pro_groups.xml',
+        'security/dw_direct_print_pro_groups.xml',
         'security/ir.model.access.csv',
         'wizards/direct_print_wizard_views.xml',
         'views/direct_print_printer_views.xml',

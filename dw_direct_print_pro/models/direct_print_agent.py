@@ -46,7 +46,7 @@ class DirectPrintAgent(models.Model):
                 "<p>En la computadora donde está la impresora:</p>"
                 "<ol>"
                 "<li>Copia el archivo <code>direct_print_agent.py</code> "
-                "(carpeta <code>direct_print_pro/agent/</code> del módulo, o descárgalo desde "
+                "(carpeta <code>dw_direct_print_pro/agent/</code> del módulo, o descárgalo desde "
                 "<code>%(url)s/direct_print/agent/download</code>).</li>"
                 "<li>Edita, al inicio del archivo, <code>ODOO_URL</code> con <code>%(url)s</code> "
                 "y <code>AGENT_TOKEN</code> con: <code>%(token)s</code></li>"

@@ -11,7 +11,7 @@ _logger = logging.getLogger(__name__)
 
 
 class DirectPrintAgentController(http.Controller):
-    """API que consume el script del agente local (direct_print_pro/agent/direct_print_agent.py).
+    """API que consume el script del agente local (dw_direct_print_pro/agent/direct_print_agent.py).
 
     No usa sesión de usuario de Odoo: el agente se autentica con un token propio por estación,
     igual de simple que un webhook. Por eso son rutas HTTP planas (no JSON-RPC): piden y devuelven
@@ -30,7 +30,7 @@ class DirectPrintAgentController(http.Controller):
 
     @http.route('/direct_print/agent/download', type='http', auth='user', methods=['GET'], csrf=False)
     def download_agent_script(self, **kwargs):
-        module_path = get_module_path('direct_print_pro')
+        module_path = get_module_path('dw_direct_print_pro')
         file_path = os.path.join(module_path, 'agent', 'direct_print_agent.py')
         with open(file_path, 'rb') as f:
             content = f.read()

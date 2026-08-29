@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="module_category_direct_print_pro" model="ir.module.category">
+    <record id="module_category_dw_direct_print_pro" model="ir.module.category">
         <field name="name">Direct Print Pro</field>
         <field name="sequence">22</field>
     </record>
 
     <record id="group_direct_print_manager" model="res.groups">
         <field name="name">Administrador</field>
-        <field name="category_id" ref="module_category_direct_print_pro"/>
+        <field name="category_id" ref="module_category_dw_direct_print_pro"/>
         <field name="implied_ids" eval="[(4, ref('base.group_system'))]"/>
         <field name="users" eval="[(4, ref('base.user_admin'))]"/>
         <field name="comment">Puede crear y editar impresoras y agentes locales. Cualquier usuario

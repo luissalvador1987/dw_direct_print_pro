@@ -2,13 +2,17 @@
 
 Imprime cualquier documento de Odoo (reportes, facturas, etiquetas de envío) directo a impresoras de red, Wi-Fi o Bluetooth, sin descargar el PDF primero.
 
-Ficha completa con capturas: [`static/description/index.html`](./direct_print_pro/static/description/index.html)
+Ficha completa con capturas: [`static/description/index.html`](./dw_direct_print_pro/static/description/index.html)
+
+> **Nombre técnico del módulo**: `dw_direct_print_pro` (antes `direct_print_pro` — se renombró porque ese
+> nombre ya estaba tomado por otro publicador en la Apps Store de Odoo). El nombre visible en Odoo
+> sigue siendo "Direct Print Pro".
 
 ## Tres niveles de impresión directa
 
 1. **Impresoras de red / Wi-Fi** — trabajo enviado directo por IP (protocolo RAW/JetDirect, puerto 9100) desde el propio servidor de Odoo. Cero configuración en cada equipo.
 2. **Impresoras conectadas a este servidor** (USB o Bluetooth ya emparejada) — se imprimen usando la cola de impresión de Windows.
-3. **Impresoras conectadas a OTRA computadora/tablet de la red** (recepción, almacén, otra oficina) — un pequeño [agente local](./direct_print_pro/agent/direct_print_agent.py) (script liviano, no un instalador pesado) recibe los trabajos de Odoo y los manda a la impresora de esa estación.
+3. **Impresoras conectadas a OTRA computadora/tablet de la red** (recepción, almacén, otra oficina) — un pequeño [agente local](./dw_direct_print_pro/agent/direct_print_agent.py) (script liviano, no un instalador pesado) recibe los trabajos de Odoo y los manda a la impresora de esa estación.
 
 Para cualquier caso no cubierto (o como respaldo), siempre queda disponible la vista previa + diálogo de impresión del navegador.
 
@@ -32,7 +36,7 @@ La impresión directa a una impresora Bluetooth o USB solo es posible desde la c
 
 ## Instalación
 
-1. Copia la carpeta `direct_print_pro` a tu carpeta de `addons` personalizada.
+1. Copia la carpeta `dw_direct_print_pro` a tu carpeta de `addons` personalizada.
 2. Reinicia el servidor de Odoo y actualiza la lista de aplicaciones.
 3. Instala **Direct Print Pro** desde Aplicaciones.
 4. Configura tus impresoras en **Direct Print Pro > Impresoras**.

@@ -103,8 +103,8 @@ class DirectPrintPrinter(models.Model):
             ).encode('utf-8', errors='replace')
             job = self.print_document(content, content_type='raw', filename='prueba.txt')
         else:
-            report = self.env.ref('direct_print_pro.action_report_test_page')
-            pdf_content, _fmt = report.sudo()._render_qweb_pdf('direct_print_pro.report_test_page', res_ids=self.ids)
+            report = self.env.ref('dw_direct_print_pro.action_report_test_page')
+            pdf_content, _fmt = report.sudo()._render_qweb_pdf('dw_direct_print_pro.report_test_page', res_ids=self.ids)
             job = self.print_document(pdf_content, content_type='pdf', filename='prueba.pdf')
         if job.state == 'error':
             raise UserError(_("La prueba de impresión falló: %s") % (job.error_message or _("error desconocido")))
@@ -183,7 +183,7 @@ class DirectPrintPrinter(models.Model):
             win32print.ClosePrinter(h_printer)
 
     def _find_sumatra(self):
-        custom = self.env['ir.config_parameter'].sudo().get_param('direct_print_pro.sumatra_path')
+        custom = self.env['ir.config_parameter'].sudo().get_param('dw_direct_print_pro.sumatra_path')
         for candidate in ([custom] if custom else []) + SUMATRA_CANDIDATE_PATHS:
             if candidate and os.path.isfile(candidate):
                 return candidate

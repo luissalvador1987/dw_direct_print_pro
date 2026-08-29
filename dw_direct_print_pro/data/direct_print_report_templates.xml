@@ -16,7 +16,7 @@
         <field name="name">Página de prueba (Direct Print Pro)</field>
         <field name="model">direct.print.printer</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">direct_print_pro.report_test_page</field>
-        <field name="report_file">direct_print_pro.report_test_page</field>
+        <field name="report_name">dw_direct_print_pro.report_test_page</field>
+        <field name="report_file">dw_direct_print_pro.report_test_page</field>
     </record>
 </odoo>
