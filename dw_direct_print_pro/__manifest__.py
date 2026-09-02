@@ -56,7 +56,7 @@ de lograr impresión directa en la impresora de OTRA computadora.
     'support': "luissalvador1987@gmail.com",
     'license': 'OPL-1',
     'price': 100.0,
-    'currency': 'EUR',
+    'currency': 'USD',
     'images': ['static/description/banner.png'],
     'depends': ['base', 'web', 'mail', 'account', 'stock', 'sale'],
     'data': [
